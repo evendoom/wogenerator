@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate') %>
+<div class="container-fluid d-flex justify-content-center">
+    <div class="form-group main-dropdown">
+        <select class="form-control" id="io-select" name="io-select">
+            <option value="" selected="selected" disabled="disabled">I want to...</option>
+            <option value="dpp">Create a DPP</option>
+            <option value="upload">Upload Media</option>
+            <option value="download">Download Media</option>
+        </select>
+    </div>
+</div>
+
+<%- include('partials/generic_js') %>
+<script src="/js/home.js"></script>
