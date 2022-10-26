@@ -1,13 +1,15 @@
 <% layout('layouts/boilerplate') %>
 <div class="container-fluid d-flex justify-content-center">
-    <div class="form-group main-dropdown">
-        <select class="form-control" id="io-select" name="io-select">
-            <option value="" selected="selected" disabled="disabled">I want to...</option>
-            <option value="dpp">Create a DPP</option>
-            <option value="upload">Upload Media</option>
-            <option value="download">Download Media</option>
-        </select>
-    </div>
+    <form action="/" method="post" class="main-dropdown">
+        <div class="form-group">
+            <select class="form-control" id="ioSelect" name="ioSelect">
+                <option value="" selected="selected" disabled="disabled">I want to...</option>
+                <option value="dpp">Create a DPP</option>
+                <option value="upload">Upload Media</option>
+                <option value="download">Download Media</option>
+            </select>
+        </div>
+    </form>
 </div>
 
 <%- include('partials/generic_js') %>

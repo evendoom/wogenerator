@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate') %>
+<div class="container-fluid d-flex justify-content-center">
+    <form action="/io/dpp/" method="post" class="main-dropdown">
+        <!-- Source Mezz -->
+        <div class="form-group">
+            <label for="dppSource">Source Mezz</label>
+            <input type="text" id="dppSource" name="dppSource" class="form-control" placeholder="Path to MOV file on SAN">
+        </div>
+        <!-- Source Metadata -->
+        <div class="form-group">
+            <label for="dppMetadata">Source Metadata</label>
+            <input type="text" id="dppMetadata" name="dppMetadata" class="form-control" placeholder="Path to metadata file on SAN">
+        </div>
+        <!-- Audio Channels -->
+        <div class="form-group">
+            <label for="dppAudio">Audio Channels</label>
+            <select class="form-control" id="dppAudio" name="dppAudio">
+                <option value="" selected="selected" disabled="disabled">How many audio channels on file?</option>
+                <option value="4">4 channels</option>
+                <option value="16">16 channels</option>
+            </select>
+        </div>
+        <!-- PSE Check -->
+        <div class="form-group">
+            <label for="dppPSE">PSE Check</label>
+            <select class="form-control" id="dppPSE" name="dppPSE">
+                <option value="" selected="selected" disabled="disabled">Which software is running PSE?</option>
+                <option value="harding">Harding</option>
+                <option value="baton">Baton</option>
+            </select>
+        </div>
+        <!-- AS-11 Destination -->
+        <div class="form-group">
+            <label for="dppDestination">AS-11 Destination</label>
+            <input type="text" id="dppDestination" name="dppDestination" class="form-control" placeholder="Path to where MXF is meant to go on SAN">
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
