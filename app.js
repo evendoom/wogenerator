@@ -32,6 +32,10 @@ app.get('/io/dpp', (req, res) => {
     res.render('io/dpp');
 });
 
+app.post('/io/dpp', (req, res) => {
+    res.send('Posted');
+});
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
