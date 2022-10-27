@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const dolbyXMLContainer = document.querySelector('.dppDolbyXML');
     const form = document.querySelector('form');
     const submitBtn = document.getElementById('submitBtn');
+    const inputs = document.querySelectorAll('input');
+    const dropdowns = document.querySelectorAll('select');
 
     // Show dolbyXML input box
     audioChannels.addEventListener('change', () => {
@@ -25,13 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     form.addEventListener('input', () => {
-        for (let i = 0; i < form.length; i++) {
-            if (form[i].value !== '' && form[i].type !== 'submit') {
-                form[i].classList.add('valid');
-                if (form[i].classList.contains('is-invalid')) {
-                    form[i].classList.remove('is-invalid');
+        for (let el of inputs) {
+            if (el.value !== '') {
+                el.labels[0].childNodes[1].classList.remove('check');
+                if (el.classList.contains('is-invalid')) {
+                    el.classList.remove('is-invalid');
                 }
+            } else {
+                el.labels[0].childNodes[1].classList.add('check');
             }
         }
-    });
+
+        for (let el of dropdowns) {
+            if (el.value !== '') {
+                el.labels[0].childNodes[1].classList.remove('check');
+                if (el.classList.contains('is-invalid')) {
+                    el.classList.remove('is-invalid');
+                }
+            } else {
+                el.labels[0].childNodes[1].classList.add('check');
+            }
+        }
+    })
 });

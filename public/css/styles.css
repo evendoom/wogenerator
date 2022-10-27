@@ -1,3 +1,19 @@
+/* FORM CONTAINER */
 .main-dropdown {
     width: 40%;
+}
+
+/* FA ICON CSS */
+.check {
+    display: none;
+}
+
+label {
+    display: block;
+}
+
+i {
+    margin-left: 1%;
+    color: green;
+    font-size: 2rem;
 }
