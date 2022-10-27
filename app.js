@@ -37,6 +37,11 @@ app.post('/io/dpp', (req, res) => {
     res.render('io/dpp_resolve', {data});
 });
 
+// Upload
+app.get('/io/upload', (req, res) => {
+    res.render('io/upload');
+});
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');

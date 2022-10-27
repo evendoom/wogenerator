@@ -4,3 +4,5 @@ to-do list:
 Update script to reset value to ''.
 
 2 - Improve CSS styles. Fonts are weird and too big.
+
+3 - Add additional comments to some templates.
