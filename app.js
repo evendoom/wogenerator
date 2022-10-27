@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     let woType = req.body.ioSelect;
-    res.redirect(`/io/${woType}`);
+    res.redirect(`io/${woType}`);
 });
 
 // DPP
@@ -33,7 +33,8 @@ app.get('/io/dpp', (req, res) => {
 });
 
 app.post('/io/dpp', (req, res) => {
-    res.send('Posted');
+    let data = req.body;
+    res.render('io/dpp_resolve', {data});
 });
 
 // Listen Port

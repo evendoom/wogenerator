@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate') %>
+<p class="copyme">
+    Please create a DPP AS-11 file:<br><br>
+    Source Mezz: <%= data.dppSource %><br><br>
+    Metadata file: <%= data.dppMetadata %><br><br>
+
+    <% if (data.dppDolbyXML) { %>
+        Dolby XML: <%= data.dppDolbyXML %><br><br>
+    <% } else { %>
+        Dolby XML: N/A (file has 4 channels of audio)<br><br>
+    <% } %>
+
+    <% if (data.dppPSE === 'baton') { %>
+        PSE Manufacturer: Baton<br><br>
+        PSE Version: ITU-R BT.1702 2018 (v1.0)<br><br>
+        <% if (data.dppAudio === '4') { %>
+            Baton Template to use: AS-11 UK DPP HD v1.1_Pictureshop_4ch<br><br>
+        <% } else { %>
+            Baton Template to use: AS-11 UK DPP HD v1.1_Pictureshop_16ch<br><br>
+        <% } %>
+    <% } else { %>
+        PSE Manufacturer: Harding<br><br>
+        PSE Version: 3.4<br><br>
+        <% if (data.dppAudio === '4') { %>
+            Baton Template to use: AS-11 UK DPP HD v1.1_Pictureshop_4ch_NO_PSE<br><br>
+        <% } else { %>
+            Baton Template to use: AS-11 UK DPP HD v1.1_Pictureshop_16ch_NO_PSE<br><br>
+        <% } %>
+    <% } %>
+    
+    Destination: <%= data.dppDestination %>
+</p>
+
+<div class="copyBtn">
+    <button class="btn btn-primary" id="copyBtn">Copy to Clipboard</button>
+</div>
+
+<p class="copied"></p>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/clipboard.js"></script>
