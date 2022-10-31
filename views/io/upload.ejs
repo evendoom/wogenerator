@@ -2,46 +2,53 @@
 <div class="container-fluid d-flex justify-content-center">
     <form action="" method="POST" class="main-dropdown">
         <!-- Source Media -->
-        <div class="form-group">
-            <label for="upSource">Source media <span class="check"><i class="fa-solid fa-check"></i></span></label>
-            <input type="text" id="upSource" name="upSource" class="form-control" placeholder="Path to media on SAN" required>
+        <div class="form-group" id="uploadGroup">
+            <label for="upSource" class="up-source-label">Source media</label>
+            <a class="plus-btn" id="plusBtn"><i class="fa-solid fa-circle-plus plus-icon"></i></a>
+            <a class="minus-btn hide-icon" id="minusBtn"><i class="fa-solid fa-circle-minus minus-icon"></i></a>
+            <span class="check"><i class="fa-solid fa-check checkmark"></i></span>
+            <input type="text" id="upSource" name="upSource" class="form-control up-source" placeholder="Path to media on SAN" required>
         </div>
         <!-- URL -->
         <div class="form-group">
-            <label for="upURL">URL <span class="check"><i class="fa-solid fa-check"></i></span></label>
-            <input type="text" id="upURL" name="upURL" class="form-control" placeholder="URL for upload platform" required>
+            <label for="upURL">Platform URL <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="upURL" name="upURL" class="form-control input-validation" placeholder="URL for upload platform" required>
         </div>
         <!-- Login Details -->
-        <h4>Login Details</h4>
+        <h4>Platform Details</h4>
         <div class="form-row row-eq-spacing-sm">
             <div class="col-sm">
-                <label for="upUsername">Username <span class="check"><i class="fa-solid fa-check"></i></span></label>
-                <input type="text" id="upUsername" name="upUsername" class="form-control" placeholder="Username" required>
+                <label for="upUsername">Username <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+                <input type="text" id="upUsername" name="upUsername" class="form-control input-validation" placeholder="Username" required>
             </div>
             <div class="col-sm">
-                <label for="upPassword">Password <span class="check"><i class="fa-solid fa-check"></i></span></label>
-                <input type="text" id="upPassword" name="upPassword" class="form-control" placeholder="Password" required>
+                <label for="upPassword">Password <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+                <input type="text" id="upPassword" name="upPassword" class="form-control input-validation" placeholder="Password" required>
             </div>
         </div>
         <!-- Recipients -->
         <div class="form-group">
-            <label for="upRecipients">Recipients <span class="check"><i class="fa-solid fa-check"></i></span></label>
-            <textarea name="upRecipients" id="upRecipients" cols="30" rows="10" class="form-control" placeholder="Email addresses of recipients"></textarea>
+            <label for="upRecipients">Recipients <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <textarea name="upRecipients" id="upRecipients" cols="30" rows="10" class="form-control input-validation" placeholder="Email addresses of recipients"></textarea>
         </div>
         <!-- Package Name -->
         <div class="form-group">
-            <label for="upPackage">Package name <span class="check"><i class="fa-solid fa-check"></i></span></label>
-            <input type="text" id="upPackage" name="upPackage" class="form-control" placeholder="Package name" required>
+            <label for="upPackage">Package name <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="upPackage" name="upPackage" class="form-control input-validation" placeholder="Package name" required>
         </div>
         <!-- Package Password -->
         <div class="form-group">
-            <label for="upPassword">Package Encryption <span class="check"><i class="fa-solid fa-check"></i></span></label>
-            <select class="form-control" id="upPassword" name="upPassword" required>
+            <label for="upPackagePassword">Package Encryption <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <select class="form-control" id="upPackagePassword" name="upPackagePassword" required>
                 <option value="" selected="selected" disabled="disabled">Package Encryption</option>
                 <option value="na">Not Required</option>
                 <option value="custom">Custom Password</option>
                 <option value="generate">Generate one for me</option>
             </select>
+        </div>
+        <div class="form-group d-none package-password">
+            <label for="customPass">Password <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="customPass" name="customPass" class="form-control input-validation" placeholder="Password">
         </div>
 
         <div class="form-group d-flex justify-content-center">
@@ -49,3 +56,6 @@
         </div>
     </form>
 </div>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/upload.js"></script>

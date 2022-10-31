@@ -12,10 +12,23 @@ label {
     display: block;
 }
 
-i {
+.checkmark {
     margin-left: 1%;
     color: rgb(7, 165, 7);
     font-size: 2rem;
+}
+
+.plus-btn, .minus-btn {
+    display: inline;
+    margin: 8px 0 0 5px;
+}
+
+.minus-btn {
+    color: rgb(207, 12, 12);
+}
+
+.minus-btn:hover {
+    color: rgb(243, 36, 36);
 }
 
 /* WO INSTRUCTIONS */
@@ -28,4 +41,27 @@ i {
     text-align: center;
     text-transform: uppercase;
     color: rgb(7, 165, 7);
+}
+
+/* UPLOAD PAGE */
+
+.up-source {
+    margin-top: 0.6%;
+}
+
+.up-source-label {
+    display: inline;
+}
+
+.plus-icon, .minus-icon {
+    font-size: 2rem;
+}
+/*
+.minus-icon {
+    color: rgb(207, 12, 12);
+}
+*/
+
+.hide-icon {
+    visibility: hidden;
 }

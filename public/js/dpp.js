@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Add checkmark when inputs and dropdowns are filled in
     form.addEventListener('input', () => {
         for (let el of inputs) {
             if (el.value !== '') {
@@ -48,5 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.labels[0].childNodes[1].classList.add('check');
             }
         }
-    })
+    });
 });

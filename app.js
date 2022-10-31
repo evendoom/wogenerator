@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const ejsMate = require('ejs-mate');
-const { redirect } = require('express/lib/response');
+const genPassword = require('generate-password');
 
 // Configure 'views' directory to use EJS
 app.set('view engine', 'ejs');
