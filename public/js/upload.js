@@ -65,6 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
     uploadGroup.addEventListener('input', () => {
         validateUploadSource(uploadGroup);
     });
+
+    // Submit button validation
+    submitBtn.addEventListener('click', () => {
+        for (let i = 0; i < form.length; i++) {
+            if (form[i].value === '' && form[i].type !== 'submit') {
+                form[i].classList.add('is-invalid');
+            }
+        }
+    });
+
 });
 
 // Create more input boxes for upload Source
@@ -108,6 +118,10 @@ const validateUploadSource = (parent) => {
     for (let el of uploadGroupInputs) {
         if (el.value === '') {
             valContainer.push(false);
+        } else {
+            if (el.classList.contains('is-invalid')) {
+                el.classList.remove('is-invalid');
+            }
         }
     }
 
