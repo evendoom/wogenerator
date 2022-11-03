@@ -42,6 +42,20 @@ app.get('/io/upload', (req, res) => {
     res.render('io/upload');
 });
 
+app.post('/io/upload', (req, res) => {
+    let data = req.body;
+    
+    if (data.upPackagePassword = 'generate') {
+        data.customPass = genPassword.generate({
+            length: 12,
+            numbers: true,
+            symbols: true
+        });
+    }
+
+    res.render('/io/upload_resolve', {data});
+});
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
