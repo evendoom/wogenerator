@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate') %>
+<p class="copyme">
+    Please upload the following:<br><br>
+    
+    <% if (typeof(data.upSource) === 'string') { %>
+        Source Path: <%= data.upSource %><br><br>
+    <% } else { %>
+        Source Paths:<br>
+        <% for (let source of data.upSource) { %>
+            <%= source %><br>
+        <% } %>
+        <br>
+    <% } %>
+    URL: <%= data.upURL %><br><br>
+    Login Username: <%= data.upUsername %><br><br>
+    Login Password: <%= data.upPassword %><br><br>
+        Recipients:<br>
+        <% for (let recipient of data.upRecipients) { %>
+            <% if (recipient.trim() !== '') { %>
+                <%= recipient %><br>
+            <% } %>
+        <% } %>
+        <br>
+    Package Name: <%= data.upPackage %><br><br>
+    <% if (data.upPackagePassword === 'na') { %>
+        Package Password: Not Required
+    <% } else { %>
+        Package Password: <%= data.customPass %>
+    <% } %>
+</p>
+
+<div class="copyBtn">
+    <button class="btn btn-primary" id="copyBtn">Copy to Clipboard</button>
+</div>
+
+<p class="copied"></p>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/clipboard.js"></script>

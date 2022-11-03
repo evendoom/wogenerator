@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const genPassword = require('generate-password');
+const cleanRecipients = require('./utilities/cleanRecipients');
 
 // Configure 'views' directory to use EJS
 app.set('view engine', 'ejs');
@@ -44,8 +45,9 @@ app.get('/io/upload', (req, res) => {
 
 app.post('/io/upload', (req, res) => {
     let data = req.body;
-    
-    if (data.upPackagePassword = 'generate') {
+    let recipientsContainer = [];
+    // Update password if user chooses to automatically generate one
+    if (data.upPackagePassword === 'generate') {
         data.customPass = genPassword.generate({
             length: 12,
             numbers: true,
@@ -53,7 +55,12 @@ app.post('/io/upload', (req, res) => {
         });
     }
 
-    res.render('/io/upload_resolve', {data});
+    // Break recipients into an array
+    data.upRecipients = cleanRecipients(data.upRecipients);
+
+    console.log(data.upRecipients);
+
+    res.render('io/upload_resolve', {data});
 });
 
 // Listen Port
