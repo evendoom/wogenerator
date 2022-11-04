@@ -70,3 +70,13 @@ label {
 .down-source-label {
     display: inline;
 }
+
+/* SAN TO SAN COPY */
+
+.san-source, .san-dest {
+    margin-top: 0.6%;
+}
+
+.san-source-label, .san-dest-label {
+    display: inline;
+}

@@ -80,6 +80,12 @@ app.post('/io/download', (req, res) => {
     res.render('io/download_resolve', {data});
 });
 
+// SAN Copy
+
+app.get('/io/sancopy', (req, res) => {
+    res.render('io/sancopy');
+});
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');

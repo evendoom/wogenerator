@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate') %>
+<div class="container-fluid d-flex justify-content-center">
+    <form action="" method="POST" class="main-dropdown">
+        <!-- Copy or Move -->
+        <div class="form-group">
+            <label for="sanSelect">Copy / Move <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <select class="form-control" id="sanSelect" name="sanSelect" required>
+                <option value="" selected="selected" disabled="disabled">Copy or Move?</option>
+                <option value="copy">Copy</option>
+                <option value="move">Move</option>
+            </select>
+        </div>
+        <!-- Source Path -->
+        <div class="form-group" id="sanCopySourceGroup">
+            <label for="sanSource" class="san-source-label">Source Path</label>
+            <a class="plus-btn" id="plusBtnSource"><i class="fa-solid fa-circle-plus plus-icon"></i></a>
+            <a class="minus-btn hide-icon" id="minusBtnSource"><i class="fa-solid fa-circle-minus minus-icon"></i></a>
+            <span class="check"><i class="fa-solid fa-check checkmark"></i></span>
+            <input type="text" id="sanSource" name="sanSource" class="form-control san-source" placeholder="Path to source media" required>
+        </div>
+        <!-- Destination Path -->
+        <div class="form-group" id="sanCopyDestGroup">
+            <label for="sanDest" class="san-dest-label">Destination Path</label>
+            <a class="plus-btn" id="plusBtnDest"><i class="fa-solid fa-circle-plus plus-icon"></i></a>
+            <a class="minus-btn hide-icon" id="minusBtnDest"><i class="fa-solid fa-circle-minus minus-icon"></i></a>
+            <span class="check"><i class="fa-solid fa-check checkmark"></i></span>
+            <input type="text" id="sanDest" name="sanDest" class="form-control san-dest" placeholder="Path to destination" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit" id="submitBtn">Submit</button>
+        </div>
+    </form>
+</div>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/sancopy.js"></script>
