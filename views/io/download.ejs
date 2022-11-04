@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate') %>
+<div class="container-fluid d-flex justify-content-center">
+    <form action="" method="POST" class="main-dropdown">
+        <!-- Download URL -->
+        <div class="form-group" id="downloadGroup">
+            <label for="downURL">Download URL / Link<span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="downURL" name="downURL" class="form-control input-validation" placeholder="URL for download" required>
+        </div>
+        <!-- Login Details -->
+        <h4>Platform Details</h4>
+        <div class="form-row row-eq-spacing-sm">
+            <div class="col-sm">
+                <label for="downUsername">Username<span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+                <input type="text" id="downUsername" name="downUsername" class="form-control input-validation" placeholder="Username" required>
+            </div>
+            <div class="col-sm">
+                <label for="downPassword">Password<span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+                <input type="text" id="downPassword" name="downPassword" class="form-control input-validation" placeholder="Password" required>
+            </div>
+        </div>
+        <!-- Package Password -->
+        <div class="form-group">
+            <label for="downPackagePass">Package Password<span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="downPackagePass" name="downPackagePass" class="form-control input-validation" 
+            placeholder="Password for Package. Leave blank if not required">
+        </div>
+        <!-- Destination SAN Path -->
+        <div class="form-group">
+            <label for="downSAN">SAN Path<span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="downSAN" name="downSAN" class="form-control input-validation"
+            placeholder="SAN path for download" required>
+        </div>
+    </form>
+</div>
+
+<%- include('../partials/generic_js') %>

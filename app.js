@@ -46,6 +46,7 @@ app.get('/io/upload', (req, res) => {
 app.post('/io/upload', (req, res) => {
     let data = req.body;
     let recipientsContainer = [];
+
     // Update password if user chooses to automatically generate one
     if (data.upPackagePassword === 'generate') {
         data.customPass = genPassword.generate({
@@ -58,9 +59,13 @@ app.post('/io/upload', (req, res) => {
     // Break recipients into an array
     data.upRecipients = cleanRecipients(data.upRecipients);
 
-    console.log(data.upRecipients);
-
     res.render('io/upload_resolve', {data});
+});
+
+// Download
+
+app.get('/io/download', (req, res) => {
+    res.render('io/download');
 });
 
 // Listen Port
