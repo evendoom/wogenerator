@@ -68,6 +68,18 @@ app.get('/io/download', (req, res) => {
     res.render('io/download');
 });
 
+app.post('/io/download', (req, res) => {
+    let data = req.body;
+
+    console.log(data.downURL);
+
+    if (data.downPackagePass === '') {
+        data.downPackagePass = 'Not Required'
+    }
+
+    res.render('io/download_resolve', {data});
+});
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');

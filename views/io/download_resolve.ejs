@@ -1,0 +1,26 @@
+<% layout('layouts/boilerplate') %>
+<p class="copyme">
+    Please download the following:<br><br>
+    <% if (typeof(data.downURL) === 'string') { %>
+        Download URL: <%= data.downURL %><br><br>
+    <% } else { %>
+        Download URLs:<br>
+        <% for (let url of data.downURL) { %>
+            <%= url %><br>
+        <% } %>
+        <br>
+    <% } %>
+    Login Username: <%= data.downUsername %><br><br>
+    Login Password: <%= data.downPassword %><br><br>
+    Package Encryption Password: <%= data.downPackagePass %><br><br>
+    Destination SAN Path: <%= data.downSAN %>
+</p>
+
+<div class="copyBtn">
+    <button class="btn btn-primary" id="copyBtn">Copy to Clipboard</button>
+</div>
+
+<p class="copied"></p>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/clipboard.js"></script>

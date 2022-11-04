@@ -10,3 +10,5 @@ Update script to reset value to ''.
 4 - Whenever user is on a sublink, there should be sopmething on the nav bar saying which WO are they on (i.e. upload, DPP, etc.)
 
 5 - Should login details be required on uploads and downloads? Perhaps it's best to default the value to 'not required', instead of making the HTML field required.
+
+6 - There should be validation preventing user from submitting the same link twice.
