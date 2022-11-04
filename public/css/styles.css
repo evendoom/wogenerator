@@ -56,12 +56,17 @@ label {
 .plus-icon, .minus-icon {
     font-size: 2rem;
 }
-/*
-.minus-icon {
-    color: rgb(207, 12, 12);
-}
-*/
 
 .hide-icon {
     visibility: hidden;
+}
+
+/* DOWNLOAD PAGE */
+
+.down-source {
+    margin-top: 0.6%;
+}
+
+.down-source-label {
+    display: inline;
 }

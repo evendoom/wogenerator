@@ -3,8 +3,11 @@
     <form action="" method="POST" class="main-dropdown">
         <!-- Download URL -->
         <div class="form-group" id="downloadGroup">
-            <label for="downURL">Download URL / Link<span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
-            <input type="text" id="downURL" name="downURL" class="form-control input-validation" placeholder="URL for download" required>
+            <label for="downURL" class="down-source-label">Download URL / Link</label>
+            <a class="plus-btn" id="plusBtn"><i class="fa-solid fa-circle-plus plus-icon"></i></a>
+            <a class="minus-btn hide-icon" id="minusBtn"><i class="fa-solid fa-circle-minus minus-icon"></i></a>
+            <span class="check"><i class="fa-solid fa-check checkmark"></i></span>
+            <input type="text" id="downURL" name="downURL" class="form-control down-source" placeholder="URL for download" required>
         </div>
         <!-- Login Details -->
         <h4>Platform Details</h4>
@@ -21,7 +24,7 @@
         <!-- Package Password -->
         <div class="form-group">
             <label for="downPackagePass">Package Password<span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
-            <input type="text" id="downPackagePass" name="downPackagePass" class="form-control input-validation" 
+            <input type="text" id="downPackagePass" name="downPackagePass" class="form-control input-validation not-required" 
             placeholder="Password for Package. Leave blank if not required">
         </div>
         <!-- Destination SAN Path -->
@@ -30,7 +33,12 @@
             <input type="text" id="downSAN" name="downSAN" class="form-control input-validation"
             placeholder="SAN path for download" required>
         </div>
+        <!-- Submit Button -->
+        <div class="form-group d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit" id="submitBtn">Submit</button>
+        </div>
     </form>
 </div>
 
 <%- include('../partials/generic_js') %>
+<script src="/js/download.js"></script>
