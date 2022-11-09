@@ -86,6 +86,28 @@ app.get('/io/sancopy', (req, res) => {
     res.render('io/sancopy');
 });
 
+app.post('/io/sancopy', (req, res) => {
+    let data = req.body;
+
+    // Tranform Source and Destination into arrays
+    if (typeof(data.sanSource) === 'string') {
+        data.sanSource = [data.sanSource];
+    }
+    
+    if (typeof(data.sanDest) === 'string') {
+        data.sanDest = [data.sanDest];
+    }
+
+    // check if number of Sources and Destinations are the same
+    if (req.body.sanSource.length === req.body.sanDest.length) {
+        data.abMatch = true;
+    } else {
+        data.abMatch = false;
+    }
+
+    res.render('io/sancopy_resolve', {data});
+});
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');

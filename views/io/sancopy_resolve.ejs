@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') %>
+<p class="copyme">
+    Please <%= data.sanSelect%> the following media:<br><br>
+
+    <% if (data.abMatch) { %>
+        <% for (let i = 0; i < data.sanSource.length; i++) { %>
+            Source: <%= data.sanSource[i] %><br>
+            Destination: <%= data.sanDest[i] %><br><br>
+        <% } %>
+    <% } else { %>
+        Sources:<br>
+        <% for (let source of data.sanSource) { %>
+            <%= source %><br>
+        <% } %>
+        <br>
+        Destination:<br>
+        <% for (let destination of data.sanDest) { %>
+            <%= destination %><br>
+        <% } %>
+    <% } %>
+</p>
+
+<div class="copyBtn">
+    <button class="btn btn-primary" id="copyBtn">Copy to Clipboard</button>
+</div>
+
+<p class="copied"></p>
+<%- include('../partials/generic_js') %>
+<script src="/js/clipboard.js"></script>
