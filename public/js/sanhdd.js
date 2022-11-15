@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const driveLabel = document.getElementById('sanhddLabel');
     const driveLabelBox = document.querySelector('.sanhddLabelBox');
     const validators = document.querySelectorAll('.input-validation');
+    const submitBtn = document.getElementById('submitBtn');
 
     // Display Encryption input box when drive format requires encryption
     driveFormat.addEventListener('change', () => {
@@ -38,6 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 el.labels[0].childNodes[1].classList.add('check');
+            }
+        }
+    });
+
+    // Submit button validation
+    submitBtn.addEventListener('click', () => {
+        for (let el of validators) {
+            if (el.value === '') {
+                el.classList.add('is-invalid');
             }
         }
     });
