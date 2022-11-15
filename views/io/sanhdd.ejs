@@ -1,0 +1,62 @@
+<% layout('layouts/boilerplate.ejs') %>
+<div class="container-fluid d-flex justify-content-center">
+    <form action="/io/sanhdd" method="POST" class="main-dropdown">
+        <!-- Barcode -->
+        <div class="form-group">
+            <label for="sanhddBarcode">HDD Barcode <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="sanhddBarcode" name="sanhddBarcode" class="form-control input-validation" placeholder="HDD Barcode" required>
+        </div>
+
+        <!-- Drive Format -->
+        <div class="form-group">
+            <label for="sanhddFormat">Drive Format <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <select class="form-control input-validation" id="sanhddFormat" name="sanhddFormat" required>
+                <option value="" selected="selected" disabled="disabled">Drive Format</option>
+                <option value="hfs">HFS+ (Mac)</option>
+                <option value="hfsenc">HFS+ Encrypted (Mac Encrypted)</option>
+                <option value="apfs">APFS (Mac)</option>
+                <option value="exfat">ExFAT</option>
+                <option value="ntfs">NTFS (Windows)</option>
+            </select>
+        </div>
+
+        <div class="form-group d-none sanhddEncryption">
+            <label for="sanhddEnc">Encryption Password <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="sanhddEnc" name="sanhddEnc" class="form-control input-validation" placeholder="Encryption Password">
+        </div>
+
+        <!-- Drive Labelling -->
+        <div class="form-group">
+            <label for="sanhddLabel">Drive Labelling <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <select class="form-control input-validation" id="sanhddLabel" name="sanhddLabel" required>
+                <option value="" selected="selected" disabled="disabled">Is Labelling Required?</option>
+                <option value="labelY">Yes</option>
+                <option value="labelN">No</option>
+            </select>
+        </div>
+
+        <div class="form-group d-none sanhddLabelBox">
+            <label for="sanhddLabelInfo">Label Info <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <textarea name="sanhddLabelInfo" id="sanhddLabelInfo" cols="30" rows="10" class="form-control input-validation" 
+            placeholder="Label info for hard drive"></textarea>
+        </div>
+
+        <!-- Source Media -->
+        <div class="form-group">
+            <label for="sanhddSource">Source Media <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <textarea name="sanhddSource" id="sanhddSource" cols="30" rows="10" class="form-control input-validation" 
+            placeholder="Source media" required></textarea>
+        </div>
+
+        <!-- Folder Structure on Drive -->
+        <div class="form-group">
+            <label for="sanhddStructure">Folder Structure on Hard Drive <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <textarea name="sanhddStructure" id="sanhddStructure" cols="30" rows="10" class="form-control input-validation" 
+            placeholder="Add any info if a specific folder structure is required on the hard drive"></textarea>
+        </div>
+
+    </form>
+</div>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/sanhdd.js"></script>

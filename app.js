@@ -108,6 +108,12 @@ app.post('/io/sancopy', (req, res) => {
     res.render('io/sancopy_resolve', {data});
 });
 
+// SAN to Hard Drive copies
+
+app.get('/io/sanhdd', (req, res) => {
+    res.render('io/sanhdd');
+})
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
