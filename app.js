@@ -45,7 +45,6 @@ app.get('/io/upload', (req, res) => {
 
 app.post('/io/upload', (req, res) => {
     let data = req.body;
-    let recipientsContainer = [];
 
     // Update password if user chooses to automatically generate one
     if (data.upPackagePassword === 'generate') {
@@ -112,7 +111,27 @@ app.post('/io/sancopy', (req, res) => {
 
 app.get('/io/sanhdd', (req, res) => {
     res.render('io/sanhdd');
-})
+});
+
+app.post('/io/sanhdd', (req, res) => {
+    let data = req.body;
+
+    // Break Drive Labelling, Sources and Folder Structure into arrays
+    if (data.sanhddLabelInfo !== '') {
+        data.sanhddLabelInfo = data.sanhddLabelInfo.split('\r\n');
+    }
+
+    
+    data.sanhddSource = data.sanhddSource.split('\r\n');
+
+    if (data.sanhddStructure !== '') {
+        data.sanhddStructure = data.sanhddStructure.split('\r\n');
+    } else {
+        data.sanhddStructure = 'None'
+    }
+    
+    res.render('io/sanhdd_resolve', {data});
+});
 
 // Listen Port
 app.listen(3000, () => {

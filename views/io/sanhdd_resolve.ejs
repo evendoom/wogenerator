@@ -1,0 +1,42 @@
+<% layout('layouts/boilerplate') %>
+<p class="copyme">
+    Please copy the requested media onto the following hard drive:<br><br>
+    Barcode: <%= data.sanhddBarcode %><br><br>
+    File System on Hard Drive: <%= data.sanhddFormat %><br><br>
+    <% if (data.sanhddEncryption === 'encN') { %>
+        Encryption: Not Required<br><br>
+    <% } else { %>
+        Password for Hard Drive Encryption: <%= data.sanhddEncPass %><br><br>
+    <% } %>
+    <% if (data.sanhddLabel === 'labelN') { %>
+        Labelling Instructions: None<br><br>
+    <% } else { %>
+        Labelling Instructions:<br>
+        <% for (let info of data.sanhddLabelInfo) { %>
+            <%= info %><br>
+        <% } %>
+        <br>
+    <% } %>
+    Source Media:<br>
+    <% for (let source of data.sanhddSource) { %>
+        <%= source %><br>
+    <% } %>
+    <br>
+    <% if (data.sanhddStructure === 'None') { %>
+        Folder Structure on Hard Drive: None
+    <% } else { %>
+        Folder Structure on Hard Drive:<br>
+        <% for (let structure of data.sanhddStructure) { %>
+            <%= structure %><br>
+        <% } %>
+    <% } %>
+</p>
+
+<div class="copyBtn">
+    <button class="btn btn-primary" id="copyBtn">Copy to Clipboard</button>
+</div>
+
+<p class="copied"></p>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/clipboard.js"></script>
