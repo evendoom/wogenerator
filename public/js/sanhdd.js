@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
-    const driveFormat = document.getElementById('sanhddFormat');
-    const driveEncryptionBox = document.querySelector('.sanhddEncryption');
+    const driveEnc = document.getElementById('sanhddEncryption');
+    const driveEncBox = document.querySelector('.sanhddEncP')
     const driveLabel = document.getElementById('sanhddLabel');
     const driveLabelBox = document.querySelector('.sanhddLabelBox');
     const validators = document.querySelectorAll('.input-validation');
     const submitBtn = document.getElementById('submitBtn');
 
     // Display Encryption input box when drive format requires encryption
-    driveFormat.addEventListener('change', () => {
-        if (driveFormat.value === 'hfsenc' || driveFormat.value === 'apfs') {
-            driveEncryptionBox.classList.remove('d-none');
-            driveEncryptionBox.children[1].setAttribute('required', true);
+    driveEnc.addEventListener('change', () => {
+        if (driveEnc.value === 'encY') {
+            driveEncBox.classList.remove('d-none');
+            driveEncBox.children[1].setAttribute('required', true);
         } else {
-            driveEncryptionBox.classList.add('d-none');
-            driveEncryptionBox.children[1].removeAttribute('required');
+            driveEncBox.classList.add('d-none');
+            driveEncBox.children[1].removeAttribute('required');
         }
     });
 

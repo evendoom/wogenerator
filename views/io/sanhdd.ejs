@@ -13,16 +13,25 @@
             <select class="form-control input-validation" id="sanhddFormat" name="sanhddFormat" required>
                 <option value="" selected="selected" disabled="disabled">Drive Format</option>
                 <option value="hfs">HFS+ (Mac)</option>
-                <option value="hfsenc">HFS+ Encrypted (Mac Encrypted)</option>
                 <option value="apfs">APFS (Mac)</option>
                 <option value="exfat">ExFAT</option>
                 <option value="ntfs">NTFS (Windows)</option>
             </select>
         </div>
 
-        <div class="form-group d-none sanhddEncryption">
-            <label for="sanhddEnc">Encryption Password <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
-            <input type="text" id="sanhddEnc" name="sanhddEnc" class="form-control input-validation" placeholder="Encryption Password">
+        <!-- Encryption -->
+        <div class="form-group">
+            <label for="sanhddEncryption">Encryption <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <select class="form-control input-validation" id="sanhddEncryption" name="sanhddEncryption" required>
+                <option value="" selected="selected" disabled="disabled">Is Encryption Required?</option>
+                <option value="encY">Yes</option>
+                <option value="encN">No</option>
+            </select>
+        </div>
+
+        <div class="form-group d-none sanhddEncP">
+            <label for="sanhddEncPass">Encryption Password <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="sanhddEncPass" name="sanhddEncPass" class="form-control input-validation" placeholder="Encryption Password">
         </div>
 
         <!-- Drive Labelling -->
