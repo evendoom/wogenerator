@@ -152,6 +152,12 @@ app.post('/io/hddsan', (req, res) => {
     res.render('io/hddsan_resolve', {data})
 });
 
+// LTO archives
+
+app.get('/io/ltoarchive', (req, res) => {
+    res.render('io/ltoarchive');
+});
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');

@@ -1,0 +1,55 @@
+<% layout('layouts/boilerplate') %>
+<div class="container-fluid d-flex justify-content-center">
+    <form action="/io/ltoarchive" method="POST" class="main-dropdown">
+        <!-- LTO Generation -->
+        <div class="form-group">
+            <label for="ltoarchiveGen">LTO Generation <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <select class="form-control input-validation" id="ltoarchiveGen" name="ltoarchiveGen" required>
+                <option value="" selected="selected" disabled="disabled">LTO Generation</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+
+        <!-- Archive Type -->
+        <div class="form-group">
+            <label for="ltoarchiveType">Archive Type <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <select class="form-control input-validation" id="ltoarchiveType" name="ltoarchiveType" required>
+                <option value="" selected="selected" disabled="disabled">Archive Type</option>
+                <option value="client">Client</option>
+                <option value="internal">Internal</option>
+            </select>
+        </div>
+
+        <div class="form-group d-none ltoarchivespec">
+            <label for="ltoarchiveSpec">LTO Spec <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <textarea name="ltoarchiveSpec" id="ltoarchiveSpec" cols="30" rows="10" class="form-control input-validation" 
+            placeholder="Add link to spec or paste spec, separating each element with a new line"></textarea>
+        </div>
+
+        <!-- Labelling -->
+        <div class="form-group ltoarchivelabel">
+            <label for="ltoarchiveLabel">Label Info <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <textarea name="ltoarchiveLabel" id="ltoarchiveLabel" cols="30" rows="10" class="form-control input-validation" 
+            placeholder="Leave blank if none provided. Separate each element with a new line"></textarea>
+        </div>
+
+        <!-- Source Media -->
+        <div class="form-group ltoarchivesource">
+            <label for="ltoarchiveSource">Source Media <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <textarea name="ltoarchiveSource" id="ltoarchiveSource" cols="30" rows="10" class="form-control input-validation" 
+            placeholder="Separate each path with a new line" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit" id="submitBtn">Submit</button>
+        </div>
+        
+    </form>
+</div>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/ltoarchive.js"></script>
