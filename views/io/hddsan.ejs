@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate') %>
+<div class="container-fluid d-flex justify-content-center">
+    <form action="/io/hddsan" method="POST" class="main-dropdown">
+        <!-- Barcode -->
+        <div class="form-group">
+            <label for="hddsanBarcode">HDD Barcode <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="hddsanBarcode" name="hddsanBarcode" class="form-control input-validation" placeholder="HDD Barcode" required>
+        </div>
+
+        <!-- Encryption -->
+        <div class="form-group">
+            <label for="hddsanEnc">Hard Drive Password <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <input type="text" id="hddsanEnc" name="hddsanEnc" class="form-control input-validation" placeholder="Leave blank if HDD is not encrypted" required>
+        </div>
+
+        <!-- Source Media -->
+        <div class="form-group">
+            <label for="hddsanSource">Media to Copy from Drive <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <textarea name="hddsanSource" id="hddsanSource" cols="30" rows="10" class="form-control input-validation" 
+            placeholder="Leave blank if all. Separate multiple sources with a new line" required></textarea>
+        </div>
+        
+        <!-- Destination -->
+        <div class="form-group">
+            <label for="hddsanDest">Media to Copy from Drive <span class="check"><i class="fa-solid fa-check checkmark"></i></span></label>
+            <textarea name="hddsanDest" id="hddsanDest" cols="30" rows="10" class="form-control input-validation" 
+            placeholder="Destination path. Separate multiple destinations with a new line" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit" id="submitBtn">Submit</button>
+        </div>
+    </form>
+</div>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/hddsan.js"></script>
