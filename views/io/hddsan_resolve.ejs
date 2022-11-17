@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate') %>
+<p class="copyme">
+Please copy media from drive to SAN:<br><br>
+Barcode: <%= data.hddsanBarcode %><br><br>
+<% if (!data.hddsanEnc) { %>
+    Drive Password: None
+<% } else { %>
+    Drive Password: <%= data.hddsanEnc %>
+<% } %>
+<br><br>
+<% if (!data.hddsanSource) { %>
+    Media to copy: All media on drive<br><br>
+<% } else { %>
+    Media to copy:<br>
+    <% for (let source of data.hddsanSource) { %>
+        <%= source %><br>
+    <% } %>
+    <br>
+<% } %>
+<% if (data.hddsanDest.length === 1) { %>
+    Destination path: <%= data.hddsanDest %>
+<% } else { %>
+    Destination paths:<br>
+    <% for (let dest of data.hddsanDest) { %>
+        <%= dest %><br>
+    <% } %>
+<% } %>
+</p>
+
+<div class="copyBtn">
+    <button class="btn btn-primary" id="copyBtn">Copy to Clipboard</button>
+</div>
+
+<p class="copied"></p>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/clipboard.js"></script>

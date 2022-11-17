@@ -139,6 +139,19 @@ app.get('/io/hddsan', (req, res) => {
     res.render('io/hddsan');
 });
 
+app.post('/io/hddsan', (req, res) => {
+    let data = req.body
+
+    // Convert Source and Destination into arrays
+    if (data.hddsanSource !== '') {
+        data.hddsanSource = data.hddsanSource.split('\r\n');
+    } 
+    
+    data.hddsanDest = data.hddsanDest.split('\r\n');
+
+    res.render('io/hddsan_resolve', {data})
+});
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
