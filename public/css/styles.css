@@ -1,3 +1,8 @@
+/* GENERAL SETTINGS */
+body {
+    font-family: 'montserrat', sans-serif;
+}
+
 /* FORM CONTAINER */
 .main-dropdown {
     width: 40%;
