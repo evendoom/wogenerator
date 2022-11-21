@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3001;
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const genPassword = require('generate-password');
@@ -179,6 +180,4 @@ app.post('/io/ltoarchive', (req, res) => {
 });
 
 // Listen Port
-app.listen(3000, () => {
-    console.log('Listening on port 3000...');
-})
+app.listen(port, () => console.log(`Listening on port ${port}!`));
