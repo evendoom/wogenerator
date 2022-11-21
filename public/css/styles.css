@@ -3,6 +3,20 @@ body {
     font-family: 'montserrat', sans-serif;
 }
 
+/* change placeholder for Chrome & Firefox */
+::placeholder {
+    color: rgb(51, 51, 51);
+}
+
+/* change placeholder for Edge */
+::-ms-input-placeholder {
+    color: rgb(51, 51, 51);
+}
+
+.container-fluid {
+    margin-top: 1%;
+}
+
 /* FORM CONTAINER */
 .main-dropdown {
     width: 40%;
