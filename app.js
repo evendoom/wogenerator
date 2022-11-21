@@ -158,6 +158,26 @@ app.get('/io/ltoarchive', (req, res) => {
     res.render('io/ltoarchive');
 });
 
+app.post('/io/ltoarchive', (req, res) => {
+    let data = req.body;
+    
+    // Convert Spec, Label and Source into arrays
+        data.ltoarchiveSpec = data.ltoarchiveSpec.split('\r\n');
+
+    if (data.ltoarchiveLabel === '') {
+        data.ltoarchiveLabel = 'None';
+        data.ltoarchiveLabel = data.ltoarchiveLabel.split('\r\n');
+    } else {
+        data.ltoarchiveLabel = data.ltoarchiveLabel.split('\r\n');
+    }
+
+    data.ltoarchiveSource = data.ltoarchiveSource.split('\r\n');
+
+    console.log(data);
+
+    res.render('io/ltoarchive_resolve', {data});
+});
+
 // Listen Port
 app.listen(3000, () => {
     console.log('Listening on port 3000...');

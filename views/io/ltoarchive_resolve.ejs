@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate') %>
+<p class="copyme">
+    Please archive media onto LTO:<br><br>
+    LTO Generation: <%= data.ltoarchiveGen %><br><br>
+    <% if (data.ltoarchiveType === 'client') { %>
+        Archive Type: Client<br><br>
+    <% } else { %>
+        Archive Type: Internal<br><br>
+    <% } %>
+    <% if (data.ltoarchiveType === 'client') { %>
+        Archive Spec:<br>
+        <% for (let spec of data.ltoarchiveSpec) { %>
+            <%= spec %><br>
+        <% } %>
+        <br>
+    <% } %>
+    Label Info:<br>
+    <% for (let info of data.ltoarchiveLabel) { %>
+        <%= info %><br>
+    <% } %>
+    <br>
+    Source Media:<br>
+    <% for (let source of data.ltoarchiveSource) { %>
+        <%= source %><br>
+    <% } %>
+    <br>
+</p>
+
+<div class="copyBtn">
+    <button class="btn btn-primary" id="copyBtn">Copy to Clipboard</button>
+</div>
+
+<p class="copied"></p>
+
+<%- include('../partials/generic_js') %>
+<script src="/js/clipboard.js"></script>
