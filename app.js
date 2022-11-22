@@ -4,7 +4,6 @@ const port = process.env.PORT || 3001;
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const genPassword = require('generate-password');
-const cleanRecipients = require('./utilities/cleanRecipients');
 
 // Configure 'views' directory to use EJS
 app.set('view engine', 'ejs');
@@ -57,7 +56,7 @@ app.post('/io/upload', (req, res) => {
     }
 
     // Break recipients into an array
-    data.upRecipients = cleanRecipients(data.upRecipients);
+    data.upRecipients = data.upRecipients.split('\r\n');
 
     res.render('io/upload_resolve', {data});
 });

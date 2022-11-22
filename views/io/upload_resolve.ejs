@@ -14,13 +14,13 @@
     URL: <%= data.upURL %><br><br>
     Login Username: <%= data.upUsername %><br><br>
     Login Password: <%= data.upPassword %><br><br>
-        Recipients:<br>
-        <% for (let recipient of data.upRecipients) { %>
-            <% if (recipient.trim() !== '') { %>
-                <%= recipient %><br>
-            <% } %>
+    Recipients:<br>
+    <% for (let recipient of data.upRecipients) { %>
+        <% if (recipient.trim() !== '') { %>
+            <%= recipient %><br>
         <% } %>
-        <br>
+    <% } %>
+    <br>
     Package Name: <%= data.upPackage %><br><br>
     <% if (data.upPackagePassword === 'na') { %>
         Package Password: Not Required
